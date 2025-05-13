@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import {
-  AppBar, Toolbar, IconButton, Drawer, Box, Button, useMediaQuery
+  AppBar, Toolbar, IconButton, Drawer, Box, Button, useMediaQuery, Link
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import scaleIcon from '../assets/logo.png';
 
 const navItems = [
-  { label: 'O nama', href: '#advokat' },
+  { label: 'O meni', href: '#advokat' },
   { label: 'Usluge', href: '#usluge' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
@@ -20,7 +20,7 @@ export default function Header() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 500);
+    const handleScroll = () => setScrolled(window.scrollY > 100);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -47,7 +47,7 @@ export default function Header() {
             px: 3,
             py: 1,
             minHeight: 'unset',
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
           }}
         >
           {/* Logo */}
@@ -66,14 +66,14 @@ export default function Header() {
           {/* Center Nav or Hamburger */}
           {isMobile ? (
             <IconButton
-              onClick={() => setOpen(true)}
+              onClick={() => setOpen(prev => !prev)}
               sx={{ color: theme.palette.primary.main }}
             >
               <MenuIcon />
             </IconButton>
           ) : (
             <>
-              <Box sx={{ display: 'flex', gap: 4 }}>
+              <Box sx={{ display: 'flex', gap: 4, alignItems: 'center' }}>
                 {navItems.map(({ label, href }) => (
                   <Button
                     key={label}
@@ -90,8 +90,9 @@ export default function Header() {
                   </Button>
                 ))}
               </Box>
-              <Box sx={{
-  border: `2px solid ${scrolled ? '#d4af37' : theme.palette.primary.main}`,
+              <Box
+                sx={{
+                  border: `2px solid ${scrolled ? '#d4af37' : theme.palette.primary.main}`,
                   px: 2.5,
                   py: 1,
                   borderRadius: 1,
@@ -114,47 +115,69 @@ export default function Header() {
       <Box sx={{ height: 0, mt: 0, backgroundColor: 'transparent' }} />
 
       {/* Drawer for mobile */}
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-        <Box
-          sx={{
-            width: 250,
-            backgroundColor: 'transparent',
-            height: '100%',
-            p: 3,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 2,
+      {isMobile && (
+        <Drawer
+          anchor="top"
+          open={open}
+          onClose={() => setOpen(false)}
+          PaperProps={{
+            sx: {
+              mt: '100px',
+              width: '100%',
+              backgroundColor: theme.palette.background.default,
+              borderTop: `2px solid ${theme.palette.primary.main}`,
+            },
           }}
         >
-          {navItems.map(({ label, href }) => (
-            <a key={label} href={href} style={{ scrollMarginTop: '140px' }} 
-              onClick={() => setOpen(false)}
-              sx={{
-                textDecoration: 'none',
-                fontFamily: 'Inter, serif',
-                fontSize: '1.2rem',
-                fontWeight: 700,
-                color: theme.palette.primary.main,
-              }}
-            >
-              {label}
-            </a>
-          ))}
           <Box
             sx={{
-              mt: 4,
-              fontSize: '1rem',
-              fontWeight: 700,
-              borderTop: `1px solid ${theme.palette.primary.main}`,
-              pt: 2,
-              color: theme.palette.primary.main,
-              textAlign: 'center',
+              width: '100%',
+              p: 3,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 2,
+              pt: 4,
+              alignItems: 'flex-start',
             }}
           >
-            (387) 62 600 274
+            {navItems.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                underline="none"
+                onClick={() => setOpen(false)}
+                sx={{
+                  display: 'block',
+                  fontFamily: 'Inter, serif',
+                  fontSize: '1.5rem',
+                  fontWeight: 700,
+                  color: theme.palette.primary.main,
+                  '&:hover': {
+                    color: '#d4af37',
+                  },
+                }}
+              >
+                {label}
+              </Link>
+            ))}
+
+            <Box
+              sx={{
+                mt: 4,
+                fontSize: '1.1rem',
+                fontWeight: 700,
+                borderTop: `1px solid ${theme.palette.primary.main}`,
+                pt: 2,
+                color: theme.palette.primary.main,
+                textAlign: 'center',
+                width: '100%',
+              }}
+            >
+              (387) 62 600 274
+            </Box>
           </Box>
-        </Box>
-      </Drawer>
+        </Drawer>
+      )}
     </>
   );
 }

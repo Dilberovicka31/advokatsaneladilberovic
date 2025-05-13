@@ -16,7 +16,7 @@ const services = [
 
 export default function Usluge() {
   return (
-    <Box id="usluge" sx={{ py: 12, backgroundColor: '#ffffff' }}>
+    <Box id="usluge" sx={{ py: 12,scrollMarginTop: '140px', backgroundColor: '#ffffff' }}>
       <Container maxWidth="md">
         {/* Title */}
         <Typography

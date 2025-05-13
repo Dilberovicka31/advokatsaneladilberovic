@@ -13,7 +13,7 @@ import EmailIcon from '@mui/icons-material/Email';
 
 export default function Kontakt() {
   return (
-    <Box id="kontakt" sx={{ py: 10, backgroundColor: '#fff' }}>
+    <Box id="kontakt" sx={{ py: 10, scrollMarginTop: '140px',backgroundColor: '#fff' }}>
       <Container maxWidth="sm">
         {/* Heading */}
         <Typography

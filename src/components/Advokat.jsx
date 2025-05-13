@@ -4,7 +4,7 @@ import profileImage from '../assets/advokat.jpeg';
 
 export default function Advokat() {
   return (
-    <Box id="advokat" sx={{ py: 10, backgroundColor: '#ffffff' }}>
+    <Box id="advokat" sx={{ py: 10, scrollMarginTop: '140px',backgroundColor: '#ffffff' }}>
       <Container maxWidth="md">
         {/* Section title */}
         <Box sx={{ mb: 6 }}>
