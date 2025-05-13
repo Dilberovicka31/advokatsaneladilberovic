@@ -1,49 +1,69 @@
 // src/components/Advokat.jsx
-import { Box, Typography, Container, Grid, Avatar } from '@mui/material';
-import profileImage from '../assets/advokat.jpeg'; // Replace with your image path
+import { Box, Typography, Container } from '@mui/material';
+import profileImage from '../assets/advokat.jpeg';
 
 export default function Advokat() {
   return (
-    <Box id="o-meni" sx={{ py: 8, backgroundColor: 'background.default' }}>
+    <Box id="advokat" sx={{ py: 10, backgroundColor: '#ffffff' }}>
       <Container>
-        <Typography
-          variant="h4"
+        {/* Section title */}
+        <Box sx={{ mb: 6 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              color: '#2e003e', // Deep purple for title
+              fontFamily: 'Inter, serif',
+              fontWeight: 700,
+              display: 'inline-block',
+              borderBottom: '3px solid #d4af37',
+              pb: 1,
+            }}
+          >
+            O MENI
+          </Typography>
+        </Box>
+
+        {/* Layout: image left, text right */}
+        <Box
           sx={{
-            color: 'primary.main',
-            mb: 4,
-            fontFamily: "'Lora', serif",
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            gap: 6,
+            alignItems: 'center',
           }}
         >
-          O MENI
-        </Typography>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={4}>
-            <Avatar
-              alt="Sanela Dilberović"
-              src={profileImage}
-              sx={{
-                width: 300,
-                height: 300,
-                mx: 'auto',
-                border: '3px solid #D4AF37',
-              }}
-            />
-          </Grid>
-          <Grid item xs={12} md={8}>
+          {/* Profile Image */}
+          <Box
+            sx={{
+              width: 300,
+              height: 400,
+              backgroundImage: `url(${profileImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'top center',
+              border: '3px solid #d4af37',
+              flexShrink: 0,
+              borderRadius: 2,
+            }}
+          />
+
+          {/* Text Content */}
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
             <Typography
               sx={{
-                color: 'text.primary',
-                lineHeight: 1.8,
-                fontSize: '1.2rem',
-                fontFamily: "'Lora', serif",
+                fontSize: '1.25rem',
+                lineHeight: 2,
+                fontFamily: 'Inter, serif',
+                color: '#2e003e', // Match nav link scroll color
+                maxWidth: 600,
+                textAlign: 'left',
               }}
             >
               Sanela Dilberović je iskusna advokatica sa više od 10 godina iskustva u različitim oblastima prava.
               Specijalizovana za porodično i ugovorno pravo, posvećena je pružanju stručne i pouzdane pravne pomoći.
               Njena misija je da klijentima pruži jasnoću, sigurnost i pravnu zaštitu na svakom koraku.
             </Typography>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

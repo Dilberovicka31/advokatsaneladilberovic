@@ -1,13 +1,23 @@
 // src/components/Hero.jsx
 import { Box, Typography } from '@mui/material';
-import hero1 from '../assets/hero1.jpg';
-import hero2 from '../assets/hero2.jpg';
+import heroImage from '../assets/hero2.jpg';
 
 export default function Hero() {
   return (
-    <Box id="o-nama" sx={{ height: '100vh', display: 'flex', overflow: 'hidden', position: 'relative' }}>
-      <Box sx={{ flex: 1, backgroundImage: `url(${hero1})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-      <Box sx={{ flex: 1, backgroundImage: `url(${hero2})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+    <Box
+      id="o-nama"
+      sx={{
+        height: '100vh',
+        backgroundImage: `url(${heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+      }}
+    >
       <Box
         sx={{
           position: 'absolute',
@@ -15,18 +25,14 @@ export default function Hero() {
           left: 0,
           width: '100%',
           height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'rgba(18,8,30,0.6)', // darker purple overlay
-          textAlign: 'center',
+          backgroundColor: 'rgba(18,8,30,0.6)',
           zIndex: 1,
         }}
-      >
+      />
+      <Box sx={{ position: 'relative', zIndex: 2 }}>
         <Typography
           variant="h2"
           sx={{
-            
             fontWeight: 700,
             letterSpacing: '-1px',
             color: 'primary.main',
@@ -35,6 +41,7 @@ export default function Hero() {
             display: 'flex',
             flexDirection: { xs: 'column', sm: 'row' },
             gap: { xs: 1, sm: 2 },
+            fontFamily: 'Inter, serif'
           }}
         >
           <span>Advokat</span>
