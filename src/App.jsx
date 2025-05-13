@@ -12,8 +12,8 @@ function App() {
       <Header />
       <Box sx={{ mt: 0 }}>
         <Hero />
-        <Usluge />
         <Advokat />
+        <Usluge />
         <Kontakt />
       </Box>
     </>

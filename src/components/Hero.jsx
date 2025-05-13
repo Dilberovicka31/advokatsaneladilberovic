@@ -1,17 +1,15 @@
-// src/components/Hero.jsx
 import { Box, Typography } from '@mui/material';
 import heroImage from '../assets/hero2.jpg';
 
 export default function Hero() {
   return (
     <Box
-      id="o-nama"
-      sx={{
+      id="o-nama" sx={{ mt: 0, pt: 0, position: 'relative',
+        width: '100%',
         height: '100vh',
         backgroundImage: `url(${heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        position: 'relative',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -25,7 +23,7 @@ export default function Hero() {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(18,8,30,0.6)',
+          backgroundColor: 'rgba(0,0,0,0.25)',
           zIndex: 1,
         }}
       />
