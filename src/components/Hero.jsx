@@ -1,13 +1,17 @@
-// src/components/Header.jsx
-
-// src/components/Hero.jsx
 import { Box, Typography } from '@mui/material';
 import heroImage from '../assets/hero2.jpg';
 
 export default function Hero() {
   return (
     <Box
-      id="hero" sx={{ scrollMarginTop: '140px', mt: 0, pt: 0, position: 'relative', zIndex: -1, pointerEvents: 'none',
+      id="hero"
+      sx={{
+        scrollMarginTop: '140px',
+        mt: 0,
+        pt: 0,
+        position: 'relative',
+        zIndex: -1,
+        pointerEvents: 'none',
         width: '100%',
         minHeight: '100vh',
         backgroundImage: `url(${heroImage})`,
@@ -15,10 +19,11 @@ export default function Hero() {
         backgroundPosition: 'center',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         textAlign: 'center',
       }}
     >
+      {/* Dark overlay */}
       <Box
         sx={{
           position: 'absolute',
@@ -30,7 +35,20 @@ export default function Hero() {
           zIndex: 1,
         }}
       />
-      <Box sx={{ position: 'relative', zIndex: 2, pointerEvents: 'auto' }}>
+
+      {/* Content Box */}
+      <Box
+        sx={{
+          position: 'relative',
+          zIndex: 2,
+          pointerEvents: 'auto',
+          px: 3,
+          py: 4,
+          borderRadius: 4,
+          backgroundColor: 'rgba(10, 10, 10, 0.5)',
+          maxWidth: '90%',
+        }}
+      >
         <Typography
           variant="h2"
           sx={{
@@ -38,15 +56,23 @@ export default function Hero() {
             letterSpacing: '-1px',
             color: 'primary.main',
             textShadow: '0 2px 4px rgba(0,0,0,0.6)',
-            px: 2,
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            gap: { xs: 1, sm: 2 },
-            fontFamily: 'Inter, serif'
+            fontFamily: 'Inter, serif',
+            mb: 2,
+            fontSize: { xs: '2rem', sm: '3rem', md: '4rem' },
           }}
         >
-          <span>Advokat</span>
-          <span>Sanela Dilberović</span>
+          Advokat Sanela Dilberović
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          sx={{
+            color: 'white',
+            fontFamily: 'Inter, serif',
+            fontSize: { xs: '1rem', md: '1.25rem' },
+            textShadow: '0 1px 3px rgba(0,0,0,0.6)',
+          }}
+        >
+          Možete nas pronaći u Mostaru – Kalajdžića 2, ili nas kontaktirati putem forme ispod.
         </Typography>
       </Box>
     </Box>
