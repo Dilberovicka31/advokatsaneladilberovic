@@ -5,21 +5,22 @@ import profileImage from '../assets/advokat.jpeg';
 export default function Advokat() {
   return (
     <Box id="advokat" sx={{ py: 10, backgroundColor: '#ffffff' }}>
-      <Container>
+      <Container maxWidth="md">
         {/* Section title */}
         <Box sx={{ mb: 6 }}>
           <Typography
             variant="h4"
             sx={{
-              color: '#2e003e', // Deep purple for title
+              color: '#2e003e',
               fontFamily: 'Inter, serif',
               fontWeight: 700,
               display: 'inline-block',
               borderBottom: '3px solid #d4af37',
+              display: 'inline-block',
               pb: 1,
             }}
           >
-            O MENI
+            O meni
           </Typography>
         </Box>
 
@@ -29,7 +30,7 @@ export default function Advokat() {
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
             gap: 6,
-            alignItems: 'center',
+            alignItems: 'flex-start',
           }}
         >
           {/* Profile Image */}
@@ -47,13 +48,13 @@ export default function Advokat() {
           />
 
           {/* Text Content */}
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ flex: 1 }}>
             <Typography
               sx={{
                 fontSize: '1.25rem',
                 lineHeight: 2,
                 fontFamily: 'Inter, serif',
-                color: '#2e003e', // Match nav link scroll color
+                color: '#2e003e',
                 maxWidth: 600,
                 textAlign: 'left',
               }}

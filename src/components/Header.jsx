@@ -80,8 +80,8 @@ export default function Header() {
                     href={href}
                     sx={{
                       color: scrolled ? '#2e003e' : theme.palette.primary.main,
-                      fontSize: '1.1rem',
-                      fontWeight: 500,
+                      fontSize: '1.25rem',
+                      fontWeight: 700,
                       textTransform: 'none',
                       fontFamily: 'Inter, serif',
                     }}
@@ -104,7 +104,7 @@ export default function Header() {
                   ml: 3,
                 }}
               >
-                (387) 32 407 444
+                (387) 62 600 274
               </Box>
             </>
           )}
@@ -151,7 +151,7 @@ export default function Header() {
               textAlign: 'center',
             }}
           >
-            (387) 32 407 444
+            (387) 62 600 274
           </Box>
         </Box>
       </Drawer>
