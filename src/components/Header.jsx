@@ -6,7 +6,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState, useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
-import scaleIcon from '../assets/logo3.png';
+import scaleIcon from '../assets/logo.png';
 
 const navItems = [
   { label: 'O meni', href: '#o-nama' },
@@ -32,7 +32,7 @@ export default function Header() {
       <AppBar position="fixed" sx={{ backgroundColor: 'transparent', boxShadow: 'none', zIndex: theme.zIndex.drawer + 1 }}>
         <Toolbar sx={{ justifyContent: 'space-between', minHeight: 64 }}>
           <Box component="a" href="#o-nama" sx={{ display: 'flex', alignItems: 'center', pl: 2 }}>
-            <img src={scaleIcon} alt="Logo" style={{ height: 100, objectFit: 'contain' }} />
+            <img src={scaleIcon} alt="Logo" style={{ height: 200, objectFit: 'contain' }} />
           </Box>
           <Box sx={{ width: 120 }} />
           {isMobile ? (

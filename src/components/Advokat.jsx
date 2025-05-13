@@ -40,7 +40,7 @@ export default function Advokat() {
               backgroundImage: `url(${profileImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'top center',
-              border: '3px solid #d4af37',
+              border: '1px solid #d4af37',
               flexShrink: 0,
               borderRadius: 2,
             }}
