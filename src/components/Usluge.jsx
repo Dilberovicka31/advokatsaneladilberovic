@@ -1,5 +1,4 @@
-// src/components/Usluge.jsx
-import { Box, Typography, Container, Grid, Paper } from '@mui/material';
+import { Box, Typography, Container, Paper, Grid } from '@mui/material';
 
 const services = [
   'Porodično pravo',
@@ -16,7 +15,7 @@ const services = [
 
 export default function Usluge() {
   return (
-    <Box id="usluge" sx={{ py: 12,scrollMarginTop: '140px', backgroundColor: '#ffffff' }}>
+    <Box id="usluge" sx={{ py: 12, scrollMarginTop: '140px', backgroundColor: '#ffffff' }}>
       <Container maxWidth="md">
         {/* Title */}
         <Typography
@@ -34,13 +33,31 @@ export default function Usluge() {
           Usluge
         </Typography>
 
-        {/* Grid in two equal columns */}
-        <Grid container spacing={4}>
+        {/* Responsive layout with two columns on md+ screens, full width on mobile */}
+        <Grid
+          container
+          spacing={3}
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 3,
+          }}
+        >
           {services.map((service, index) => (
-            <Grid item xs={12} sm={6} key={index}>
+            <Grid
+              item
+              key={index}
+              xs={12}
+              md={5.5}
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            >
               <Paper
                 elevation={0}
                 sx={{
+                  width: '100%',
+                  maxWidth: 400,
                   p: 3,
                   backgroundColor: '#f8f6f3',
                   color: '#2e003e',
