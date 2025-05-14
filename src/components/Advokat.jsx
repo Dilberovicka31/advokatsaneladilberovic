@@ -34,18 +34,21 @@ export default function Advokat() {
           }}
         >
           {/* Profile Image */}
-          <Box
-            sx={{
-              width: 300,
-              height: 400,
-              backgroundImage: `url(${profileImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'top center',
-              border: '1px solid #d4af37',
-              flexShrink: 0,
-              borderRadius: 2,
-            }}
-          />
+         {/* Profile Image */}
+<Box
+  sx={{
+    width: { xs: 200, sm: 250, md: 300 },
+    height: { xs: 270, sm: 350, md: 400 },
+    backgroundImage: `url(${profileImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'top center',
+    border: '1px solid #d4af37',
+    borderRadius: 2,
+    mx: { xs: 'auto', md: 0 }, // center on mobile
+    flexShrink: 0,
+  }}
+/>
+
 
           {/* Text Content */}
           <Box sx={{ flex: 1 }}>
