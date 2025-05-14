@@ -31,9 +31,9 @@ export default function Header() {
         position="fixed"
         elevation={0}
         sx={{
-          backgroundColor: 'transparent',
+          backgroundColor: scrolled ? '#12081e' : 'transparent',
           boxShadow: 'none',
-          backdropFilter: 'none',
+          transition: 'background-color 0.3s ease',
           zIndex: theme.zIndex.drawer + 1,
         }}
       >
@@ -67,7 +67,7 @@ export default function Header() {
           {isMobile ? (
             <IconButton
               onClick={() => setOpen(prev => !prev)}
-              sx={{ color: theme.palette.primary.main }}
+              sx={{ color: '#d4af37' }}
             >
               <MenuIcon />
             </IconButton>
@@ -79,7 +79,7 @@ export default function Header() {
                     key={label}
                     href={href}
                     sx={{
-                      color: scrolled ? '#2e003e' : theme.palette.primary.main,
+                      color: '#d4af37',
                       fontSize: '1.25rem',
                       fontWeight: 700,
                       textTransform: 'none',
@@ -92,11 +92,11 @@ export default function Header() {
               </Box>
               <Box
                 sx={{
-                  border: `2px solid ${scrolled ? '#d4af37' : theme.palette.primary.main}`,
+                  border: '2px solid #d4af37',
                   px: 2.5,
                   py: 1,
                   borderRadius: 1,
-                  color: scrolled ? '#2e003e' : theme.palette.primary.main,
+                  color: '#d4af37',
                   fontWeight: 700,
                   fontFamily: 'Inter, serif',
                   fontSize: '1rem',
@@ -125,7 +125,7 @@ export default function Header() {
               mt: '100px',
               width: '100%',
               backgroundColor: theme.palette.background.default,
-              borderTop: `2px solid ${theme.palette.primary.main}`,
+              borderTop: '2px solid #d4af37',
             },
           }}
         >
@@ -151,9 +151,9 @@ export default function Header() {
                   fontFamily: 'Inter, serif',
                   fontSize: '1.5rem',
                   fontWeight: 700,
-                  color: theme.palette.primary.main,
+                  color: '#d4af37',
                   '&:hover': {
-                    color: '#d4af37',
+                    color: '#c19c2c',
                   },
                 }}
               >
@@ -166,9 +166,9 @@ export default function Header() {
                 mt: 4,
                 fontSize: '1.1rem',
                 fontWeight: 700,
-                borderTop: `1px solid ${theme.palette.primary.main}`,
+                borderTop: '1px solid #d4af37',
                 pt: 2,
-                color: theme.palette.primary.main,
+                color: '#d4af37',
                 textAlign: 'center',
                 width: '100%',
               }}
