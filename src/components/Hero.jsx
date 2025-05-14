@@ -10,7 +10,7 @@ export default function Hero() {
         mt: 0,
         pt: 0,
         position: 'relative',
-        zIndex: -1,
+       
         pointerEvents: 'none',
         width: '100%',
         minHeight: '100vh',
