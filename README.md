@@ -5,11 +5,14 @@ A modern, professional business website for **Advokat Sanela Dilberović**, buil
 🌐 **Live Site**: [https://advokatsaneladilberovic.netlify.app/](https://advokatsaneladilberovic.netlify.app/)
 
 ---
-### 📱 Mobile Layout
-![Mobile Preview](./public/screenshots/mobile_screen.png)
-
 ### 💻 Desktop Layout
-![Desktop Preview](./public/screenshots/large_screen.png)
+![Desktop Preview](./public/screenshots/mobile_screen.png)
+
+### 📱 Mobile Layout
+<p align="center">
+  <img src="./public/screenshots/mobile_screen.png" alt="Mobile layout" width="250"/>
+</p>
+
 
 ---
 
