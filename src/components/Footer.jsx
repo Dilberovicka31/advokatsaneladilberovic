@@ -19,13 +19,16 @@ export default function Footer() {
       >
         <Stack spacing={3} alignItems="center">
           {/* LinkedIn Icon */}
-          <LinkedInIcon
-            sx={{ color: '#d4af37', fontSize: 32 }}
-            component="a"
-            href="https://www.linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          />
+          <Box
+  component="a"
+  href="https://www.linkedin.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  sx={{ color: '#d4af37' }}
+>
+  <LinkedInIcon sx={{ fontSize: 32 }} />
+</Box>
+
 
           {/* Scroll to Top Button */}
           <Button
