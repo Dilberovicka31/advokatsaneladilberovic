@@ -59,9 +59,12 @@ export default function Advokat() {
                 textAlign: 'left',
               }}
             >
-              Sanela Dilberović je iskusna advokatica sa više od 10 godina iskustva u različitim oblastima prava.
-              Specijalizovana za porodično i ugovorno pravo, posvećena je pružanju stručne i pouzdane pravne pomoći.
-              Njena misija je da klijentima pruži jasnoću, sigurnost i pravnu zaštitu na svakom koraku.
+Sanela Dilberović je iskusna pravnica sa više od 20 godina rada u različitim oblastima prava, a posljednjih 5 godina aktivno obavlja funkciju advokatice.
+Tokom svoje bogate karijere stekla je duboko razumijevanje pravnog sistema, kako kroz rad u institucijama, tako i kroz direktan rad s klijentima.
+Specijalizovala se za porodično i ugovorno pravo, gdje je posebno posvećena zaštiti prava i interesa svojih klijenata, pružajući im jasne, precizne i pouzdane pravne savjete.
+
+Sanela je poznata po svom predanom i profesionalnom pristupu, ali i po toplom i ljudskom odnosu prema svakome ko joj se obrati za pomoć.
+Njena misija je da svaki klijent osjeti sigurnost, razumije pravni proces i ima pravog zastupnika na svojoj strani – od prvog savjeta pa sve do konačnog rješenja.
             </Typography>
           </Box>
         </Box>

@@ -23,26 +23,30 @@ export default function Kontakt() {
     setSuccess(false);
     setError(false);
 
-    const emailValue = form.current.email.value;
-    const phoneValue = form.current.phone.value;
+    const { name, email, phone, message } = form.current;
 
-    if (!/\S+@\S+\.\S+/.test(emailValue)) {
+    if (!name.value.trim()) {
+      alert('Unesite svoje ime i prezime.');
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email.value)) {
       alert('Unesite ispravnu email adresu.');
       return;
     }
 
-    if (phoneValue && !/^[0-9+\s()-]{6,}$/.test(phoneValue)) {
+    if (!phone.value || !/^[0-9+\s()-]{6,}$/.test(phone.value)) {
       alert('Unesite ispravan broj telefona.');
       return;
     }
 
+    if (!message.value.trim()) {
+      alert('Unesite poruku.');
+      return;
+    }
+
     emailjs
-      .sendForm(
-        'service_twnfxon',
-        'template_n5v37sb',
-        form.current,
-        'U6d2OxY3jUfKRipED'
-      )
+      .sendForm('service_twnfxon', 'template_n5v37sb', form.current, 'U6d2OxY3jUfKRipED')
       .then(() => {
         setSuccess(true);
         form.current.reset();
@@ -66,12 +70,17 @@ export default function Kontakt() {
       '& textarea': {
         color: '#2e003e',
       },
+      '&:-webkit-autofill': {
+        boxShadow: '0 0 0 1000px #f8f6f3 inset',
+        WebkitTextFillColor: '#2e003e',
+        caretColor: '#2e003e',
+      },
     },
     '& .MuiOutlinedInput-notchedOutline': {
-      borderColor: '#d4af37',
+      borderColor: '#2e003e',
     },
     '& .Mui-focused .MuiOutlinedInput-notchedOutline': {
-      borderColor: '#d4af37',
+      borderColor: '#2e003e',
     },
   };
 
@@ -102,9 +111,11 @@ export default function Kontakt() {
               fullWidth
               required
               sx={fieldStyles}
-              inputProps={{
-                onInvalid: (e) => e.target.setCustomValidity('Unesite svoje ime i prezime'),
-                onInput: (e) => e.target.setCustomValidity(''),
+              slotProps={{
+                input: {
+                  onInvalid: (e) => e.target.setCustomValidity('Unesite svoje ime i prezime'),
+                  onInput: (e) => e.target.setCustomValidity(''),
+                },
               }}
             />
             <TextField
@@ -115,9 +126,11 @@ export default function Kontakt() {
               fullWidth
               required
               sx={fieldStyles}
-              inputProps={{
-                onInvalid: (e) => e.target.setCustomValidity('Unesite ispravnu email adresu'),
-                onInput: (e) => e.target.setCustomValidity(''),
+              slotProps={{
+                input: {
+                  onInvalid: (e) => e.target.setCustomValidity('Unesite ispravnu email adresu'),
+                  onInput: (e) => e.target.setCustomValidity(''),
+                },
               }}
             />
             <TextField
@@ -125,10 +138,13 @@ export default function Kontakt() {
               label="Broj telefona"
               variant="outlined"
               fullWidth
+              required
               sx={fieldStyles}
-              inputProps={{
-                onInvalid: (e) => e.target.setCustomValidity('Unesite ispravan broj telefona'),
-                onInput: (e) => e.target.setCustomValidity(''),
+              slotProps={{
+                input: {
+                  onInvalid: (e) => e.target.setCustomValidity('Unesite ispravan broj telefona'),
+                  onInput: (e) => e.target.setCustomValidity(''),
+                },
               }}
             />
             <TextField
@@ -140,9 +156,11 @@ export default function Kontakt() {
               fullWidth
               required
               sx={fieldStyles}
-              inputProps={{
-                onInvalid: (e) => e.target.setCustomValidity('Unesite poruku'),
-                onInput: (e) => e.target.setCustomValidity(''),
+              slotProps={{
+                textarea: {
+                  onInvalid: (e) => e.target.setCustomValidity('Unesite poruku'),
+                  onInput: (e) => e.target.setCustomValidity(''),
+                },
               }}
             />
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -173,6 +191,8 @@ export default function Kontakt() {
           </Stack>
         </form>
       </Container>
+ 
+
 
       {/* MAP & INFO SECTION (PRESERVED) */}
       <Container maxWidth="md" sx={{ mt: 10 }}>
@@ -193,29 +213,29 @@ export default function Kontakt() {
           ></iframe>
         </Box>
 
-        <Stack spacing={2} sx={{ mt: 5, alignItems: 'center' }}>
+        <Stack spacing={2} sx={{ mt: 5, alignItems: 'center', color: '#2e003e' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <RoomIcon sx={{ fontSize: 28, color: '#333' }} />
-            <Typography sx={{ fontSize: '1rem', color: '#333' }}>
+            <RoomIcon sx={{ fontSize: 28, color: '#d4af37' }} />
+            <Typography sx={{ fontSize: '1rem', color: '#2e003e'}}>
               Kalajdžića 2, Mostar 88 104
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <PhoneIcon sx={{ fontSize: 28, color: '#333' }} />
-            <Typography sx={{ fontSize: '1rem', color: '#333' }}>
+            <PhoneIcon sx={{ fontSize: 28, color: '#d4af37' }} />
+            <Typography sx={{ fontSize: '1rem', color: '#2e003e' }}>
               +387 62 600 274
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <AccessTimeIcon sx={{ fontSize: 28, color: '#333' }} />
-            <Typography sx={{ fontSize: '1rem', color: '#333' }}>
+            <AccessTimeIcon sx={{ fontSize: 28, color: '#d4af37' }} />
+            <Typography sx={{ fontSize: '1rem', color: '#2e003e' }}>
               Radno vrijeme od 09:00 do 16:00
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <EmailIcon sx={{ fontSize: 28, color: '#333' }} />
-            <Typography sx={{ fontSize: '1rem', color: '#333' }}>
-              advokat@advokat.ba
+            <EmailIcon sx={{ fontSize: 28, color: '#d4af37' }} />
+            <Typography sx={{ fontSize: '1rem', color: '#2e003e' }}>
+              advokat.dilberovic@gmail.com
             </Typography>
           </Box>
         </Stack>

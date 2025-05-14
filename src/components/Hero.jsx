@@ -64,16 +64,19 @@ export default function Hero() {
           Advokat Sanela Dilberović
         </Typography>
         <Typography
-          variant="subtitle1"
-          sx={{
-            color: 'white',
-            fontFamily: 'Inter, serif',
-            fontSize: { xs: '1rem', md: '1.25rem' },
-            textShadow: '0 1px 3px rgba(0,0,0,0.6)',
-          }}
-        >
-          Možete nas pronaći u Mostaru – Kalajdžića 2, ili nas kontaktirati putem forme ispod.
-        </Typography>
+  variant="subtitle1"
+  sx={{
+    color: '#fff',
+    textShadow: '0 1px 3px rgba(0,0,0,0.8)',
+    mt: 2,
+    fontSize: { xs: '1rem', sm: '1.2rem' },
+    px: 2,
+  }}
+>
+  Možete nas pronaći u Mostaru --<br />
+  Kalajdžića 2, ili nas kontaktirati putem forme ispod.
+</Typography>
+
       </Box>
     </Box>
   );
