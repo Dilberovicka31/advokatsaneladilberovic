@@ -1,12 +1,43 @@
 // src/components/Footer.jsx
-import { Box, Typography, Stack, Fade, useScrollTrigger, Button } from '@mui/material';
+import { useEffect, useState } from 'react';
+import {
+  Box,
+  Typography,
+  Stack,
+  Fade,
+  Button
+} from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function Footer() {
-  const trigger = useScrollTrigger({ threshold: 100 });
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // Show footer when nearing bottom (or on very short pages)
+      if (scrollPosition >= documentHeight - 100) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+
+    handleScroll(); // Run once on load
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   return (
-    <Fade in={trigger} timeout={1000}>
+    <Fade in={show} timeout={1000}>
       <Box
         component="footer"
         sx={{
@@ -20,15 +51,14 @@ export default function Footer() {
         <Stack spacing={3} alignItems="center">
           {/* LinkedIn Icon */}
           <Box
-  component="a"
-  href="https://www.linkedin.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  sx={{ color: '#d4af37' }}
->
-  <LinkedInIcon sx={{ fontSize: 32 }} />
-</Box>
-
+            component="a"
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: '#d4af37' }}
+          >
+            <LinkedInIcon sx={{ fontSize: 32 }} />
+          </Box>
 
           {/* Scroll to Top Button */}
           <Button
